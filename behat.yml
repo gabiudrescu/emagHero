@@ -1,0 +1,11 @@
+default:
+    suites:
+        orderus: ~
+    extensions:
+        Behat\Symfony2Extension:
+            context:
+                class_suffix: Behat\Context
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~
