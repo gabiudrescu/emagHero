@@ -1,0 +1,19 @@
+parameters:
+    Orderus: {name: Orderus, health: 20, strength: 40, defence: 50, speed: 70, luck: 30}
+
+services:
+    options_resolver:
+        class: Symfony\Component\OptionsResolver\OptionsResolver
+
+    emagia.character.factory:
+        class: Emagia\Bundle\EmagiaBundle\Factory\CharacterFactory
+        calls:
+            - ['configureOptions', [@options_resolver, %orderus%]]
+
+    emagia.character:
+        class: Emagia\Bundle\EmagiaBundle\Entity\Character
+        factory: ['@emagia.character.factory', build]
+
+#    emagia.example:
+#        class: Emagia\Bundle\EmagiaBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

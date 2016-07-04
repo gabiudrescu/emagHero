@@ -1,0 +1,25 @@
+Emagia\Bundle\EmagiaBundle\Entity\Character:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        health:
+            type: integer
+        strength:
+            type: integer
+        defence:
+            type: integer
+        speed:
+            type: integer
+        luck:
+            type: integer
+    lifecycleCallbacks: {  }

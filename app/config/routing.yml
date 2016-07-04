@@ -1,0 +1,4 @@
+emagia:
+    resource: "@EmagiaBundle/Resources/config/routing.yml"
+    prefix:   /
+
