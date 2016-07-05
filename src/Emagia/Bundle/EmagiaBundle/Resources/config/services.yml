@@ -9,7 +9,7 @@ services:
         class: Emagia\Bundle\EmagiaBundle\Factory\CharacterFactory
         calls:
             - ['setProperties', [%orderus%]]
-            - ['configureOptions', [@options_resolver]]
+            - ['configureOptions', ['@options_resolver']]
 
     emagia.character:
         class: Emagia\Bundle\EmagiaBundle\Entity\Character
