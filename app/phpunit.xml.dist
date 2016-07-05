@@ -32,6 +32,10 @@
                 <directory>../src/*/*Bundle/Tests</directory>
                 <directory>../src/*/Bundle/*Bundle/Resources</directory>
                 <directory>../src/*/Bundle/*Bundle/Tests</directory>
+
+                <!--temporary disable testing on controllers and dic extensions-->
+                <directory>../src/*/Bundle/*Bundle/Controller</directory>
+                <directory>../src/*/Bundle/*Bundle/DependencyInjection</directory>
             </exclude>
         </whitelist>
     </filter>

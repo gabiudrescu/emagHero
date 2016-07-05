@@ -8,7 +8,8 @@ services:
     emagia.character.factory:
         class: Emagia\Bundle\EmagiaBundle\Factory\CharacterFactory
         calls:
-            - ['configureOptions', [@options_resolver, %orderus%]]
+            - ['setProperties', [%orderus%]]
+            - ['configureOptions', [@options_resolver]]
 
     emagia.character:
         class: Emagia\Bundle\EmagiaBundle\Entity\Character

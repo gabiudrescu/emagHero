@@ -17,7 +17,12 @@ class CharacterFactory
      */
     protected $options;
 
-    public function configureOptions(OptionsResolver $resolver, $options)
+    /**
+     * @var array
+     */
+    protected $properties;
+
+    public function configureOptions(OptionsResolver $resolver)
     {
         $mandatory = ['name', 'health', 'strength', 'defence', 'speed', 'luck'];
 
@@ -34,7 +39,14 @@ class CharacterFactory
             $resolver->setAllowedValues($criterion, $notEmptyValidator);
         }
 
-        $this->options = $resolver->resolve($options);
+        $this->options = $resolver->resolve($this->properties);
+    }
+
+    public function setProperties(array $properties)
+    {
+        $this->properties = $properties;
+
+        return $this;
     }
 
     public function getOptions()
