@@ -13,12 +13,9 @@ matrix:
     - php: '7.0'
   fast_finish: true
 
+# https://github.com/composer/composer/pull/5127 using vendor for phpspec until this goes in PROD
 script:
-    - ls -lha
-    - ls -lha bin/
-    - cat composer.json
-    - cat composer.lock
-    - bin/phpspec run
+    - vendor/phpspec/phpspec/bin/phpspec run
     - phpunit -c app/
 
 cache:
