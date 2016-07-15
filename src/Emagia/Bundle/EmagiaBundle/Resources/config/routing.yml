@@ -1,0 +1,3 @@
+emagia_homepage:
+    path:     /
+    defaults: { _controller: EmagiaBundle:Default:index }
