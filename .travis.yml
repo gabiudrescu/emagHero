@@ -14,8 +14,8 @@ matrix:
   fast_finish: true
 
 script:
-    - phpunit -c app/
     - bin/phpspec run
+    - phpunit -c app/
 
 cache:
     composer: true
